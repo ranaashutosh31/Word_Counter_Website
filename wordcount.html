@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- STYLESHEET -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="div container-fluid">
+<!-- TEXTBOX -->
+        <div class="row">
+            <div class="col-sm d-flex justify-content-center">
+                <textarea class="words" cols="29" rows="14"></textarea>
+            </div>
+        </div>
+<!-- NUMBER OF WORDS -->
+        <div class="row">
+            <div class="col-sm d-flex justify-content-center">
+                <p class="NumOfWords">Number of Words : 0 </p>
+            </div>
+        </div>
+<!-- COUNT AND RESET -->
+        <div class="row">
+            <div class="col-sm d-inline-flex justify-content-center">
+                <button class="count" onclick="count()">Count Words</button>
+                <button class="clear" onclick="reset()">  Clear Words </button>
+            </div>
+        </div>
+        
+    </div>
+<!-- JAVASCRIPT -->
+    <script>
+        const count = () => {
+            let words = document.querySelector(".words").value;
+            words = words.match(/\w+/g);
+            words = words.length;
+            document.querySelector(".NumOfWords").innerHTML = "Number of Words : " + words;
+        } 
+        const reset = () => {
+            document.querySelector(".words").value="";
+        }
+    </script>
+</body>
+</html>
